@@ -25,8 +25,8 @@
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D collision)
-    {
+        public virtual void OnTriggerEnter2D(Collider2D collision)
+        {
             Debug.Log("HitBox triggered with: " + collision.gameObject.name);
             if(collision.CompareTag("Enemy"))
             {
@@ -34,7 +34,7 @@
             }
         }
 
-        public void OnTriggerExit2D(Collider2D collision)
+        public virtual void OnTriggerExit2D(Collider2D collision)
         {
             return;
         }
@@ -44,9 +44,5 @@
             hitBoxCollider = GetComponent<Collider2D>();
             hitBoxSpriteRenderer = GetComponent<SpriteRenderer>();
             Enable();
-        }
-        void Update()
-        {
-
         }
     }
