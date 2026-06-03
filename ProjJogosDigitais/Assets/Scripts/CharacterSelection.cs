@@ -17,7 +17,7 @@ public class CharacterSelection : MonoBehaviour
     public Image p2Preview;
 
     private int p1Index = 0;
-    private int p2Index = 1; 
+    private int p2Index = 4; 
 
     private bool p1Ready = false;
     private bool p2Ready = false;
