@@ -16,8 +16,6 @@ public class WalkingCharacter : MonoBehaviour
         personagemSpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
-
-
  
     void MoveAnimator()
     {

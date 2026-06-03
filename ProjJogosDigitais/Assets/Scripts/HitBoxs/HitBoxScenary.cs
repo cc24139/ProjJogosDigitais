@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+
 public class HitBoxScenary : HitBox
 {
     private const string tag = "Scenary";
