@@ -151,6 +151,12 @@ MonoBehaviour:
   mapLayouts:
   - {fileID: 7598468283918203647, guid: 9aa165e331b68e446aedaf5c4f9a94d8, type: 3}
   - {fileID: 47188350151614761, guid: ab296cefa1c242f429e888a2322a590e, type: 3}
+  themeSprites:
+  - {fileID: 7570261955899823483, guid: 0e7a0520dc0e54073ad518a6cbe8aaed, type: 3}
+  - {fileID: 1542797479184128933, guid: 30c1280d9290e49709cc2cc0cc1654d0, type: 3}
+  - {fileID: -5268556579243117650, guid: f795cd9bad3264353ba9e682f5bf26d5, type: 3}
+  - {fileID: -6619449902860846101, guid: 2b8be64f3e09c4fd0bb4f453a8e2ca5c, type: 3}
+  - {fileID: -384757380312669271, guid: 933c815a6878d4d2f847b42db297a8ca, type: 3}
 --- !u!4 &275697012
 Transform:
   m_ObjectHideFlags: 0
