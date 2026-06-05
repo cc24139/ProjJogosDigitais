@@ -33,7 +33,10 @@ public class MapGenerator : MonoBehaviour
 
             foreach (SpriteRenderer renderer in platformRenderers)
             {
-                renderer.sprite = chosenTheme;
+                if (renderer.gameObject.name.Contains("Platform"))
+                {
+                    renderer.sprite = chosenTheme;
+                }
             }
         }
         else
