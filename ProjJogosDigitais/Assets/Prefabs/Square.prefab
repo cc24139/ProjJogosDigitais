@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 3873192624329082642}
   - component: {fileID: 8699397830671803563}
   - component: {fileID: 7442532219998441651}
+  - component: {fileID: 3241435609604087674}
   m_Layer: 7
   m_Name: Square
   m_TagString: Player
@@ -293,6 +294,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dash
   dashSpeed: 20
   dashDuration: 0.2
+--- !u!114 &3241435609604087674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542060515203820728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920392efca706ba48903fbe15393b1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
 --- !u!1 &611534768048494574
 GameObject:
   m_ObjectHideFlags: 0

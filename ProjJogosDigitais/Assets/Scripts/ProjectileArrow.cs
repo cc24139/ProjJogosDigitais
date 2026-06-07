@@ -17,18 +17,33 @@ public class ProjectileArrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"A armadilha acertou o {other.name}!");
-            
-            // Tirar a vida do jogador atingido
+            Debug.Log($"HitBoxHurt triggered with: {other.name}");
 
-            Destroy(gameObject); 
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth == null)
+            {
+                playerHealth = other.GetComponentInParent<PlayerHealth>();
+            }
+
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(20); 
+                Destroy(gameObject); 
+                return; 
+            }
         }
         
         if (other.gameObject.name.Contains("Platform") || other.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            Collider2D playerPerto = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Default")); 
+            
+            if (other.gameObject.CompareTag("Player") == false)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
