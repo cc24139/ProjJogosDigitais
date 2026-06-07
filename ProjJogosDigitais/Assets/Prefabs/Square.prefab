@@ -275,8 +275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0400b88797ff1474da53010aa9a715ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WalkingCharacter
+  playerID: 1
   animator: {fileID: 0}
   rb: {fileID: 3926902236564479534}
+  jumpForce: 30
 --- !u!114 &7442532219998441651
 MonoBehaviour:
   m_ObjectHideFlags: 0

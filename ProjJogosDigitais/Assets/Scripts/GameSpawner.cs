@@ -28,10 +28,13 @@ public class GameSpawner : MonoBehaviour
         GameObject p1Prefab = characterPrefabs[p1ID];
         GameObject p1 = Instantiate(p1Prefab, p1Point.transform.position, p1Point.transform.rotation);
         p1.name = "Player 1"; 
+        p1.GetComponent<WalkingCharacter>().playerID = 1;
 
         GameObject p2Prefab = characterPrefabs[p2ID];
         GameObject p2 = Instantiate(p2Prefab, p2Point.transform.position, p2Point.transform.rotation);
         p2.name = "Player 2";
+        p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
+        p2.GetComponent<WalkingCharacter>().playerID = 2;
         
         p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
     }
