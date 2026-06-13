@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Samurai_TakeHit
+  m_Name: Oni_Jump
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -7500690451134026123, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
+      value: {fileID: 7460046300004610927, guid: 33284e6f3b415ee4284eccff49504634, type: 3}
     - time: 0.016666668
-      value: {fileID: -889859373511162655, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
-    - time: 0.033333335
-      value: {fileID: -3088938797480143695, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
-    - time: 0.05
-      value: {fileID: -9206091644520726168, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
+      value: {fileID: 7034338576483803127, guid: 33284e6f3b415ee4284eccff49504634, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -7500690451134026123, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
-    - {fileID: -889859373511162655, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
-    - {fileID: -3088938797480143695, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
-    - {fileID: -9206091644520726168, guid: c0229e2178e0b4e02a5d2619802f2cb9, type: 3}
+    - {fileID: 7460046300004610927, guid: 33284e6f3b415ee4284eccff49504634, type: 3}
+    - {fileID: 7034338576483803127, guid: 33284e6f3b415ee4284eccff49504634, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.06666667
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
