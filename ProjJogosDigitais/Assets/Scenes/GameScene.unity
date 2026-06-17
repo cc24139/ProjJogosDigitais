@@ -611,6 +611,8 @@ MonoBehaviour:
   - {fileID: 3137580388718526155, guid: 083ad3a034d7049f5b73c460ded69cae, type: 3}
   healthBarFillP1: {fileID: 831622032}
   healthBarFillP2: {fileID: 2007280328}
+  manaBarFillP1: {fileID: 1672609702}
+  manaBarFillP2: {fileID: 565030473}
 --- !u!1 &1193603539
 GameObject:
   m_ObjectHideFlags: 0
