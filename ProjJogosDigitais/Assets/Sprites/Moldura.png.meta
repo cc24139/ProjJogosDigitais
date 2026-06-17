@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b23e6b5815c83974cab721a2f147c1ba
+guid: f332649f21dc50e47965ea8426f3a05f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2257601343260386137
-    second: HealthMeter_0
+      213: -3420139586244584797
+    second: Moldura_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthMeter_0
+      name: Moldura_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 884
-        height: 132
+        x: 39
+        y: 50
+        width: 949
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 953ea7dd57c945f10800000000000000
-      internalID: 2257601343260386137
+      spriteID: 3aad3afba293980d0800000000000000
+      internalID: -3420139586244584797
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HealthMeter_0: 2257601343260386137
+      Moldura_0: -3420139586244584797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
