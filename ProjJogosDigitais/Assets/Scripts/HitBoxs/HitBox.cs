@@ -2,7 +2,7 @@
     using UnityEngine.UIElements;
     public class HitBox : MonoBehaviour, IHitBox
     {
-        private bool isEnabled = false;
+        public bool isEnabled = false;
         public Collider2D hitBoxCollider;
         public SpriteRenderer hitBoxSpriteRenderer;
         public void Enable()

@@ -7,14 +7,20 @@ using UnityEngine.UIElements;
 public class HitBoxPlayerAttack : HitBox
 {
     private const string tag = "Enemy";
+
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("HitBoxPlayerAttack triggered with: " + collision.gameObject.name);
-        if (collision.CompareTag(tag))
+
+        if (collision.CompareTag(tag) && isEnabled)
         {
-            IPlayer player = collision.GetComponentInParent<IPlayer>();
-            if (player != null){
-                player.TakeDamge();
+            Debug.Log("HitBoxPlayerAttack triggered with: " + collision.gameObject.name);
+            var player = collision.GetComponentInParent<IDamage>();
+            var playerAnimation = collision.GetComponentInParent<CharacterAnimator>();
+            if (player != null && playerAnimation != null)
+            {
+                playerAnimation.PlayTakeHit();
+                player.TakeDamage(10);
+                Disable();
             }
             Debug.Log("Hit Enemy!");
         }

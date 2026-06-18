@@ -11,13 +11,14 @@ public class HitBoxHurt : HitBox
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("HitBoxHurt triggered with: " + collision.gameObject.name);
-        if (collision.CompareTag(tag))
+        if (collision.CompareTag(tag) && isEnabled)
         {
             Debug.Log("Hit Player!");
-            IPlayer player = GetComponentInParent<IPlayer>();
+            var player = GetComponentInParent<IDamage>();
             if (player != null)
             {
-                player.TakeDamge();
+                player.TakeDamage(10); // Exemplo de dano
+                Disable();
             }
         }
     }

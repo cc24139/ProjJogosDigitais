@@ -5,21 +5,25 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - AttackPlayers
+  - Boss
+  - Projectile
   - Ground
+  - Item
+  - AttackPlayers
+  - Scenary
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Enemy
+  - Ground
   - Player
-  - AttackPlayers
-  - AttackEnemy
-  - Scenary
-  - 
+  - PlayerAttack
+  - EnemyAttack
+  - Projectile
+  - Item
   - 
   - 
   - 

@@ -7,10 +7,12 @@ public class CharacterCombat : MonoBehaviour
     [SerializeField] private int attackCount = 2;
 
     private CharacterAnimator characterAnimator;
+    private  CharacterHitBoxs characterHitBoxs;
 
     private void Awake()
     {
         characterAnimator = GetComponent<CharacterAnimator>();
+        characterHitBoxs = GetComponent<CharacterHitBoxs>();
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class CharacterCombat : MonoBehaviour
         {
             return;
         }
-
+        characterHitBoxs.Attack();
         characterAnimator.PlayAttack(attackIndex);
     }
 }
