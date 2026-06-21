@@ -1284,8 +1284,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: FALLEN ORDERS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc9688efde8b341cfbb1494c687688a2, type: 2}
-  m_sharedMaterial: {fileID: -5629778357742769798, guid: fc9688efde8b341cfbb1494c687688a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 689efb9a4d3138b4f8356951646179ec, type: 2}
+  m_sharedMaterial: {fileID: 7721041325429561283, guid: 689efb9a4d3138b4f8356951646179ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2296,8 +2296,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-  O Torneio  -'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc9688efde8b341cfbb1494c687688a2, type: 2}
-  m_sharedMaterial: {fileID: -5629778357742769798, guid: fc9688efde8b341cfbb1494c687688a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 689efb9a4d3138b4f8356951646179ec, type: 2}
+  m_sharedMaterial: {fileID: 7721041325429561283, guid: 689efb9a4d3138b4f8356951646179ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
