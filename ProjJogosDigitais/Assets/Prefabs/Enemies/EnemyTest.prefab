@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 602404170920415396}
   - component: {fileID: 8495558858282178605}
   - component: {fileID: 6928437914332537856}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: AttacksBox
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -74,10 +74,10 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 128
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -111,10 +111,9 @@ GameObject:
   - component: {fileID: 7869714146540250614}
   - component: {fileID: 719599910389052799}
   - component: {fileID: 8333963140638171865}
-  - component: {fileID: -1118031306873133508}
-  m_Layer: 7
-  m_Name: "Ca\xE7adora"
-  m_TagString: Player
+  m_Layer: 9
+  m_Name: EnemyTest
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,18 +342,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38211823, y: 0.4205676}
   m_EdgeRadius: 0
---- !u!114 &-1118031306873133508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862711066715196403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
 --- !u!1 &5611558230548327779
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +353,7 @@ GameObject:
   - component: {fileID: 7650934232051989863}
   - component: {fileID: 3432829733122850536}
   - component: {fileID: 4383948555247813240}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: HurtBox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -401,7 +388,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -414,10 +401,10 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0

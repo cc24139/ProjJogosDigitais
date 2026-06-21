@@ -9,7 +9,7 @@ public class HitBoxScenary : HitBox
     private const string tag = "Scenary";
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("HitBoxScenary triggered with: " + collision.gameObject.name);
+       // Debug.Log("HitBoxScenary triggered with: " + collision.gameObject.name);
         if (collision.CompareTag("Scenary") && isEnabled )
         {
             Debug.Log("Hit Scenary!");

@@ -20,7 +20,7 @@ public class CharacterMovement : MonoBehaviour
         characterAnimator = GetComponent<CharacterAnimator>();
     }
 
-    private void Update()
+   /* private void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
@@ -33,6 +33,24 @@ public class CharacterMovement : MonoBehaviour
         {
             Jump();
         }
+    }*/
+
+    public void Move(float horizontalInput)
+    {
+        this.horizontalInput = horizontalInput;
+        characterAnimator.SetSpeed(horizontalInput);
+        characterAnimator.SetVerticalVelocity(rb.linearVelocity.y);
+        characterAnimator.SetGrounded(isGrounded);
+        characterAnimator.Flip(horizontalInput);
+    }
+
+    public void Jump()
+    {
+        if (!isGrounded)
+            return;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        isGrounded = false;
+        characterAnimator.SetGrounded(false);
     }
 
     private void FixedUpdate()
@@ -40,12 +58,6 @@ public class CharacterMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalInput * speed, rb.linearVelocity.y);
     }
 
-    private void Jump()
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
-        characterAnimator.SetGrounded(false);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

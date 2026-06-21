@@ -15,23 +15,6 @@ public class CharacterCombat : MonoBehaviour
         characterHitBoxs = GetComponent<CharacterHitBoxs>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Attack(0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Attack(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Attack(2);
-        }
-    }
 
     public void Attack(int attackIndex)
     {

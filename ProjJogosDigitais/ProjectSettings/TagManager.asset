@@ -19,12 +19,12 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Player
-  - PlayerAttack
-  - EnemyAttack
+  - P1
+  - P1Attack
+  - P2
+  - P2Attack
   - Projectile
   - Item
-  - 
   - 
   - 
   - 

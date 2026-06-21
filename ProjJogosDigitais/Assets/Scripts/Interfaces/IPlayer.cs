@@ -15,6 +15,7 @@ namespace ProjJogosDigitais.Assets.Scripts.Interfaces
     public interface IAttack
     {
         public int GetAtualAttack();
+        
     }
 
     public interface IPlayer : IDamage, IAttack
