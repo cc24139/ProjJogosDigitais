@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 6880009366091459938}
   - component: {fileID: 5270817576965624169}
   - component: {fileID: 917388081216064913}
+  - component: {fileID: 2674443142860669581}
+  - component: {fileID: 6147074360742083150}
   m_Layer: 0
   m_Name: Samurai
   m_TagString: Untagged
@@ -148,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &8763687925914017772
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1846f0d3e3c00c449685dc8afba72a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -225,6 +227,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   speed: 5
   jumpForce: 8
+--- !u!114 &2674443142860669581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835165949924474189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff537b3b417c8db40b31c35db36ed307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterHitBoxs
+  playerSide: 0
+--- !u!114 &6147074360742083150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835165949924474189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
+  p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
 --- !u!1001 &306203057911294457
 PrefabInstance:
   m_ObjectHideFlags: 0

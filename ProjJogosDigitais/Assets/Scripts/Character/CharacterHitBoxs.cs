@@ -16,7 +16,7 @@ public class CharacterHitBoxs : MonoBehaviour
 {
     [Header("HitBox")]
     // [SerializeField] private BoxCollider2D hitBox;
-    [SerializeField] private PlayerSide playerSide;
+    [SerializeField] public PlayerSide playerSide;
     private HitBoxHurt hitBoxHurt;
     private HitBoxPlayerAttack hitBoxPlayerAttack;
     private HitBoxScenary hitBoxScenary;

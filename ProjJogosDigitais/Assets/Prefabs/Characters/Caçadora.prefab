@@ -244,7 +244,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5284247933243291023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff537b3b417c8db40b31c35db36ed307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterHitBoxs
-  hitBox: {fileID: 8333963140638171865}
+  playerSide: 0
 --- !u!61 &8333963140638171865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1846f0d3e3c00c449685dc8afba72a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -355,6 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
+  p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
 --- !u!1 &5611558230548327779
 GameObject:
   m_ObjectHideFlags: 0

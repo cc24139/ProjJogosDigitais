@@ -31,6 +31,7 @@ public class GameSpawner : MonoBehaviour
         p1.name = "Player 1";
         p1.GetComponent<WalkingCharacter>().playerID = 1;
         p1.GetComponent<PlayerHealth>().healthBarFill = healthBarFillP1;
+        p1.GetComponent<CharacterHitBoxs>().playerSide = PlayerSide.P1; // Configura o lado do player para P1
         
         if (p1.GetComponent<PlayerMana>() != null) 
         {
@@ -42,6 +43,7 @@ public class GameSpawner : MonoBehaviour
         p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
         p2.GetComponent<WalkingCharacter>().playerID = 2;
         p2.GetComponent<PlayerHealth>().healthBarFill = healthBarFillP2;
+        p2.GetComponent<CharacterHitBoxs>().playerSide = PlayerSide.P2; // Configura o lado do player para P2
         
         if (p2.GetComponent<PlayerMana>() != null) 
         {

@@ -12,6 +12,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterAnimator))]
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] private PlayerInputManager p1;
+    [SerializeField] private PlayerInputManager p2;    
 
     private PlayerInputManager inputConfig;
     private CharacterMovement movement;
@@ -29,8 +31,13 @@ public class CharacterController : MonoBehaviour
         hitBoxs = GetComponent<CharacterHitBoxs>();
         animator = GetComponent<CharacterAnimator>();
 
-        
+        Configure();
     }
+
+    private void Configure(){
+        inputConfig = hitBoxs.playerSide == PlayerSide.P1 ? p1 : p2;
+    }
+
 
     private void Update()
     {

@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4032791901803981343}
   - component: {fileID: 9209434151761014291}
   - component: {fileID: -820657670681510600}
+  - component: {fileID: 5600729277075815570}
+  - component: {fileID: 6980169647174242434}
   m_Layer: 0
   m_Name: Marcial
   m_TagString: Untagged
@@ -32,8 +34,8 @@ Transform:
   m_GameObject: {fileID: 4247216164320928247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.969, y: -0.8986, z: 0}
-  m_LocalScale: {x: 2.7033, y: 2.7033, z: 1}
+  m_LocalPosition: {x: -4.824, y: -0.974, z: 0}
+  m_LocalScale: {x: 2.8563068, y: 2.8563068, z: 1.0566}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6865988658676437719}
@@ -92,7 +94,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6008538901687629182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +200,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1846f0d3e3c00c449685dc8afba72a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -222,9 +224,36 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2599999, y: 1.2599999}
+  m_Offset: {x: 0.044671804, y: 0.0046766675}
+  m_Size: {x: 0.4355159, y: 0.5077856}
   m_Direction: 0
+--- !u!114 &5600729277075815570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247216164320928247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff537b3b417c8db40b31c35db36ed307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterHitBoxs
+  playerSide: 0
+--- !u!114 &6980169647174242434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247216164320928247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
+  p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
 --- !u!1001 &3359881665811465251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,7 +264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6600703159962741759, guid: 968edb9b99095d144972c87f9f0e178d, type: 3}
       propertyPath: m_Size.x
-      value: 0.1805583
+      value: 0.16182199
       objectReference: {fileID: 0}
     - target: {fileID: 6600703159962741759, guid: 968edb9b99095d144972c87f9f0e178d, type: 3}
       propertyPath: m_Size.y
@@ -243,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6600703159962741759, guid: 968edb9b99095d144972c87f9f0e178d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.03305364
+      value: 0.03890884
       objectReference: {fileID: 0}
     - target: {fileID: 6600703159962741759, guid: 968edb9b99095d144972c87f9f0e178d, type: 3}
       propertyPath: m_Offset.y

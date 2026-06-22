@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6601442876928875743
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1846f0d3e3c00c449685dc8afba72a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -252,6 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
+  p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
 --- !u!1001 &4241507370762484831
 PrefabInstance:
   m_ObjectHideFlags: 0
