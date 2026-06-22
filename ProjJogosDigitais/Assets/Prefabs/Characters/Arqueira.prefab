@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424bd83fa4629d04596ae02c1f4b763f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  inputConfig: {fileID: 0}
 --- !u!1001 &1883171029042004841
 PrefabInstance:
   m_ObjectHideFlags: 0

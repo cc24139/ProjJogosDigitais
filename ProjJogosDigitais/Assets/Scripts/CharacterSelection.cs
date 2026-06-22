@@ -50,6 +50,7 @@ public class CharacterSelection : MonoBehaviour
         {
             Menu.player1SelectedID = p1Index;
             Menu.player2SelectedID = p2Index;
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
