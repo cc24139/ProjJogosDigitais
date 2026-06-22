@@ -8,17 +8,20 @@ public class CharacterSelection : MonoBehaviour
     public Transform[] characterSlots;  
     public int columns = 5; 
 
+    [Header("Animações dos Personagens")]
+    [Tooltip("Coloque aqui o Animator Controller de Idle de cada personagem, na mesma ordem dos Slots.")]
+    public RuntimeAnimatorController[] characterAnimators; 
+
     [Header("Seletores (Molduras)")]
     public RectTransform p1Selector;
     public RectTransform p2Selector;
 
-    [Header("Imagens de Preview (Opcional)")]
-    public Image p1Preview;
-    public Image p2Preview;
+    [Header("Imagens de Preview (Animadas)")]
+    public Animator p1Preview;
+    public Animator p2Preview;
 
     private int p1Index = 0;
     private int p2Index = 4; 
-
     private bool p1Ready = false;
     private bool p2Ready = false;
 
@@ -29,13 +32,10 @@ public class CharacterSelection : MonoBehaviour
 
     void Update()
     {
-
         if (p1Ready && p2Ready)
         {
-            
             Menu.player1SelectedID = p1Index;
             Menu.player2SelectedID = p2Index;
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
@@ -47,18 +47,10 @@ public class CharacterSelection : MonoBehaviour
     {
         if (p1Ready) return;
 
-
-        if (Input.GetKeyDown(KeyCode.D) && (p1Index + 1) % columns != 0 && p1Index + 1 < characterSlots.Length)
-            p1Index++;
-        if (Input.GetKeyDown(KeyCode.A) && p1Index % columns != 0)
-            p1Index--;
-
-
-        if (Input.GetKeyDown(KeyCode.S) && p1Index + columns < characterSlots.Length)
-            p1Index += columns;
-        if (Input.GetKeyDown(KeyCode.W) && p1Index - columns >= 0)
-            p1Index -= columns;
-
+        if (Input.GetKeyDown(KeyCode.D) && (p1Index + 1) % columns != 0 && p1Index + 1 < characterSlots.Length) p1Index++;
+        if (Input.GetKeyDown(KeyCode.A) && p1Index % columns != 0) p1Index--;
+        if (Input.GetKeyDown(KeyCode.S) && p1Index + columns < characterSlots.Length) p1Index += columns;
+        if (Input.GetKeyDown(KeyCode.W) && p1Index - columns >= 0) p1Index -= columns;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,18 +65,10 @@ public class CharacterSelection : MonoBehaviour
     {
         if (p2Ready) return;
 
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) && (p2Index + 1) % columns != 0 && p2Index + 1 < characterSlots.Length)
-            p2Index++;
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && p2Index % columns != 0)
-            p2Index--;
-
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) && p2Index + columns < characterSlots.Length)
-            p2Index += columns;
-        if (Input.GetKeyDown(KeyCode.UpArrow) && p2Index - columns >= 0)
-            p2Index -= columns;
-
+        if (Input.GetKeyDown(KeyCode.RightArrow) && (p2Index + 1) % columns != 0 && p2Index + 1 < characterSlots.Length) p2Index++;
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && p2Index % columns != 0) p2Index--;
+        if (Input.GetKeyDown(KeyCode.DownArrow) && p2Index + columns < characterSlots.Length) p2Index += columns;
+        if (Input.GetKeyDown(KeyCode.UpArrow) && p2Index - columns >= 0) p2Index -= columns;
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -97,15 +81,13 @@ public class CharacterSelection : MonoBehaviour
 
     void AtualizarPosicaoSeletores()
     {
-        
         if (!p1Ready) p1Selector.position = characterSlots[p1Index].position;
         if (!p2Ready) p2Selector.position = characterSlots[p2Index].position;
 
-        
-        if (p1Preview && characterSlots[p1Index].GetComponent<Image>())
-            p1Preview.sprite = characterSlots[p1Index].GetComponent<Image>().sprite;
+        if (p1Preview != null && characterAnimators.Length > p1Index)
+            p1Preview.runtimeAnimatorController = characterAnimators[p1Index];
             
-        if (p2Preview && characterSlots[p2Index].GetComponent<Image>())
-            p2Preview.sprite = characterSlots[p2Index].GetComponent<Image>().sprite;
+        if (p2Preview != null && characterAnimators.Length > p2Index)
+            p2Preview.runtimeAnimatorController = characterAnimators[p2Index];
     }
 }
