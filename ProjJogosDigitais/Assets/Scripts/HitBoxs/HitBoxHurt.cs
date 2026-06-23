@@ -16,8 +16,11 @@ public class HitBoxHurt : HitBox
         var controller = GetComponentInParent<CharacterController>();
         if (controller != null)
         {
-            Debug.Log("Achou Controller!");
-            controller.OnHit(10);
+         
+            var player = collision.GetComponentInParent<CharacterController>();
+            var damage = player.DamageAtual;
+            Debug.Log("Damage!!!!: " + damage);
+            controller.OnHit(damage);
         }
     }
 

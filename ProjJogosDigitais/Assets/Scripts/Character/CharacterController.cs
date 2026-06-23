@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
     private bool isAttacking = false;
     private bool isDead = false;
 
+    public int DamageAtual { get; private set; } = 10;
+
     private void Awake()
     {
         movement = GetComponent<CharacterMovement>();
@@ -88,9 +90,7 @@ public class CharacterController : MonoBehaviour
         hitBoxs.Attack();
         combat.Attack(attackIndex);
         movement.Move(0);
-
     }
-
 
 
     public void EndAttack()
@@ -148,5 +148,13 @@ public class CharacterController : MonoBehaviour
 
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameEndScene");
+    }
+
+    public void setDamage(int damage){
+        Debug.Log("setDamage???: " + damage);
+        if (damage > 0)
+        {
+            DamageAtual = damage;
+        }
     }
 }
