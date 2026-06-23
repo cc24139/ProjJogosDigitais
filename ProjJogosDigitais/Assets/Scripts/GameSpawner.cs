@@ -1,18 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameSpawner : MonoBehaviour
 {
     [Header("Character Prefabs")]
     public GameObject[] characterPrefabs;
 
-    [Header("Referências da UI - Vida")]
-    public Image healthBarFillP1; 
-    public Image healthBarFillP2; 
-
-    [Header("Referências da UI - Mana")]
-    public Image manaBarFillP1; 
-    public Image manaBarFillP2; 
+    [Header("Referências do HUD")]
+    public PlayerHUD hudP1;
+    public PlayerHUD hudP2;
 
     void Start()
     {
@@ -27,27 +22,41 @@ public class GameSpawner : MonoBehaviour
         int p1ID = Menu.player1SelectedID;
         int p2ID = Menu.player2SelectedID;
 
-        GameObject p1 = Instantiate(characterPrefabs[p1ID], p1Point.transform.position, p1Point.transform.rotation);
-        p1.name = "Player 1";
-        p1.GetComponent<WalkingCharacter>().playerID = 1;
-        p1.GetComponent<PlayerHealth>().healthBarFill = healthBarFillP1;
-        p1.GetComponent<CharacterHitBoxs>().playerSide = PlayerSide.P1; // Configura o lado do player para P1
-        
-        if (p1.GetComponent<PlayerMana>() != null) 
+        if (p1Point != null && characterPrefabs[p1ID] != null)
         {
-            p1.GetComponent<PlayerMana>().manaBarFill = manaBarFillP1;
+            GameObject p1 = Instantiate(characterPrefabs[p1ID], p1Point.transform.position, p1Point.transform.rotation);
+            p1.name = "Player 1";
+
+            CharacterHitBoxs hitBoxsP1 = p1.GetComponent<CharacterHitBoxs>();
+            if (hitBoxsP1 != null) hitBoxsP1.playerSide = PlayerSide.P1;
+
+            p1.SendMessage("Configure", SendMessageOptions.DontRequireReceiver);
+
+            if (p1.GetComponent<WalkingCharacter>() != null) p1.GetComponent<WalkingCharacter>().playerID = 1;
+            
+            CharacterStatus statusP1 = p1.GetComponent<CharacterStatus>();
+            if (statusP1 != null && hudP1 != null) hudP1.Setup(statusP1);
+
+            MatchData.p1CharacterName = characterPrefabs[p1ID].name;
         }
 
-        GameObject p2 = Instantiate(characterPrefabs[p2ID], p2Point.transform.position, p2Point.transform.rotation);
-        p2.name = "Player 2";
-        p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
-        p2.GetComponent<WalkingCharacter>().playerID = 2;
-        p2.GetComponent<PlayerHealth>().healthBarFill = healthBarFillP2;
-        p2.GetComponent<CharacterHitBoxs>().playerSide = PlayerSide.P2; // Configura o lado do player para P2
-        
-        if (p2.GetComponent<PlayerMana>() != null) 
+        if (p2Point != null && characterPrefabs[p2ID] != null)
         {
-            p2.GetComponent<PlayerMana>().manaBarFill = manaBarFillP2;
+            GameObject p2 = Instantiate(characterPrefabs[p2ID], p2Point.transform.position, p2Point.transform.rotation);
+            p2.name = "Player 2";
+            p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
+
+            CharacterHitBoxs hitBoxsP2 = p2.GetComponent<CharacterHitBoxs>();
+            if (hitBoxsP2 != null) hitBoxsP2.playerSide = PlayerSide.P2;
+
+            p2.SendMessage("Configure", SendMessageOptions.DontRequireReceiver);
+
+            if (p2.GetComponent<WalkingCharacter>() != null) p2.GetComponent<WalkingCharacter>().playerID = 2;
+            
+            CharacterStatus statusP2 = p2.GetComponent<CharacterStatus>();
+            if (statusP2 != null && hudP2 != null) hudP2.Setup(statusP2);
+
+            MatchData.p2CharacterName = characterPrefabs[p2ID].name;
         }
     }
 }

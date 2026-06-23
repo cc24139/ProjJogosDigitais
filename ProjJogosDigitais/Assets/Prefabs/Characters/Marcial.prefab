@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -820657670681510600}
   - component: {fileID: 5600729277075815570}
   - component: {fileID: 6980169647174242434}
+  - component: {fileID: 1566945059966984574}
   m_Layer: 0
   m_Name: Marcial
   m_TagString: Untagged
@@ -254,6 +255,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
   p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
+--- !u!114 &1566945059966984574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247216164320928247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d275a7f1f5c6b4f45b9cb5245f97e321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStatus
+  maxHealth: 100
+  maxMana: 100
 --- !u!1001 &3359881665811465251
 PrefabInstance:
   m_ObjectHideFlags: 0

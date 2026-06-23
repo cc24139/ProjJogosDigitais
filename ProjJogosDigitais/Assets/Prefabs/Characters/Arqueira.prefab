@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6177894810297024327}
   - component: {fileID: 5069263681560525019}
   - component: {fileID: 4666422622912708867}
+  - component: {fileID: 1490590726798132191}
   m_Layer: 0
   m_Name: Arqueira
   m_TagString: Untagged
@@ -254,6 +255,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
   p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
+--- !u!114 &1490590726798132191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808745739919001412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d275a7f1f5c6b4f45b9cb5245f97e321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStatus
+  maxHealth: 100
+  maxMana: 100
 --- !u!1001 &1883171029042004841
 PrefabInstance:
   m_ObjectHideFlags: 0

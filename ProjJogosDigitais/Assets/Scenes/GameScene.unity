@@ -262,7 +262,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1193603540}
-  - {fileID: 790799250}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -354,6 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790799250}
+  - component: {fileID: 790799251}
   m_Layer: 5
   m_Name: HealthBar (3)
   m_TagString: Untagged
@@ -368,21 +368,35 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790799249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2049362811}
   - {fileID: 2007280327}
   - {fileID: 565030472}
-  m_Father: {fileID: 406974269}
+  m_Father: {fileID: 1193603540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476, y: -30}
+  m_AnchoredPosition: {x: 1270.8334, y: 0}
   m_SizeDelta: {x: 581.1665, y: 239.1897}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &790799251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790799249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1643866d7dc8b3488b7173a7ade3fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHUD
+  healthBarFill: {fileID: 2007280328}
+  manaBarFill: {fileID: 565030473}
 --- !u!1 &792373026
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,10 +623,8 @@ MonoBehaviour:
   - {fileID: 808745739919001412, guid: 303cd8b11407ccb4a9663e39c23b8ca5, type: 3}
   - {fileID: 808745739919001412, guid: 303cd8b11407ccb4a9663e39c23b8ca5, type: 3}
   - {fileID: 808745739919001412, guid: 303cd8b11407ccb4a9663e39c23b8ca5, type: 3}
-  healthBarFillP1: {fileID: 831622032}
-  healthBarFillP2: {fileID: 2007280328}
-  manaBarFillP1: {fileID: 1672609702}
-  manaBarFillP2: {fileID: 565030473}
+  hudP1: {fileID: 1193603541}
+  hudP2: {fileID: 790799251}
 --- !u!1 &1193603539
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193603540}
+  - component: {fileID: 1193603541}
   m_Layer: 5
   m_Name: HealthBar (2)
   m_TagString: Untagged
@@ -644,6 +657,7 @@ RectTransform:
   - {fileID: 2107698142}
   - {fileID: 831622031}
   - {fileID: 1672609701}
+  - {fileID: 790799250}
   m_Father: {fileID: 406974269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -651,6 +665,20 @@ RectTransform:
   m_AnchoredPosition: {x: 55, y: -30}
   m_SizeDelta: {x: 581.1666, y: 239.1897}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1193603541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193603539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1643866d7dc8b3488b7173a7ade3fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHUD
+  healthBarFill: {fileID: 831622032}
+  manaBarFill: {fileID: 1672609702}
 --- !u!1 &1294744945
 GameObject:
   m_ObjectHideFlags: 0

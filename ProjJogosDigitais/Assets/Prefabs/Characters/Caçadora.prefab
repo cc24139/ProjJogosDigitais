@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 719599910389052799}
   - component: {fileID: 8333963140638171865}
   - component: {fileID: -1118031306873133508}
+  - component: {fileID: 8416927214065707064}
   m_Layer: 7
   m_Name: "Ca\xE7adora"
   m_TagString: Player
@@ -357,6 +358,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   p1: {fileID: 11400000, guid: 35d1379231af69443a6694edc26e3d5e, type: 2}
   p2: {fileID: 11400000, guid: 839168b979f0f86459963c5c44ab3ed8, type: 2}
+--- !u!114 &8416927214065707064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862711066715196403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d275a7f1f5c6b4f45b9cb5245f97e321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStatus
+  maxHealth: 100
+  maxMana: 100
 --- !u!1 &5611558230548327779
 GameObject:
   m_ObjectHideFlags: 0
