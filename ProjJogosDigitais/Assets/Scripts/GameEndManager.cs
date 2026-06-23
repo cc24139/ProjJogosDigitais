@@ -48,7 +48,7 @@ public class VictoryScreenManager : MonoBehaviour
         CalcularParDeBarras(MatchData.p1Damage, MatchData.p2Damage, p1DamageBar, p2DamageBar);
         CalcularParDeBarras(MatchData.p1Heal, MatchData.p2Heal, p1HealBar, p2HealBar);
         CalcularParDeBarras(MatchData.p1Mana, MatchData.p2Mana, p1ManaBar, p2ManaBar);
-        CalcularParDeBarras(MatchData.p1Specials, MatchData.p2Specials, p1SpecialsBar, p2SpecialsBar);
+        CalcularParDeBarras(MatchData.p1Mana, MatchData.p2Mana, p1SpecialsBar, p2SpecialsBar);
     }
 
     void ConfigurarTextosNumericos()
@@ -62,8 +62,8 @@ public class VictoryScreenManager : MonoBehaviour
         if (p1ManaText != null) p1ManaText.text = MatchData.p1Mana.ToString();
         if (p2ManaText != null) p2ManaText.text = MatchData.p2Mana.ToString();
 
-        if (p1SpecialsText != null) p1SpecialsText.text = MatchData.p1Specials.ToString();
-        if (p2SpecialsText != null) p2SpecialsText.text = MatchData.p2Specials.ToString();
+        if (p1SpecialsText != null) p1SpecialsText.text = (MatchData.p1Mana / 10).ToString();
+        if (p2SpecialsText != null) p2SpecialsText.text = (MatchData.p2Mana / 10).ToString();
     }
 
     void CalcularParDeBarras(int valorP1, int valorP2, Image barraP1, Image barraP2)
@@ -97,6 +97,7 @@ public class VictoryScreenManager : MonoBehaviour
 
     public void VoltarMenu()
     {
+        MatchData.Reset();
         MatchData.menuDestination = "MainMenu";
         SceneManager.LoadScene("MenuScene");
     }
