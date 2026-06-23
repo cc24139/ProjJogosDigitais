@@ -28,15 +28,16 @@ public class GameSpawner : MonoBehaviour
             p1.name = "Player 1";
 
             CharacterHitBoxs hitBoxsP1 = p1.GetComponent<CharacterHitBoxs>();
-            if (hitBoxsP1 != null) hitBoxsP1.playerSide = PlayerSide.P1;
-
+            
+            if (hitBoxsP1 != null)
+                hitBoxsP1.SetupSide(PlayerSide.P1);
             p1.SendMessage("Configure", SendMessageOptions.DontRequireReceiver);
 
             if (p1.GetComponent<WalkingCharacter>() != null) p1.GetComponent<WalkingCharacter>().playerID = 1;
             
             CharacterStatus statusP1 = p1.GetComponent<CharacterStatus>();
             if (statusP1 != null && hudP1 != null) hudP1.Setup(statusP1);
-
+            
             MatchData.p1CharacterName = characterPrefabs[p1ID].name;
         }
 
@@ -47,7 +48,8 @@ public class GameSpawner : MonoBehaviour
             p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
 
             CharacterHitBoxs hitBoxsP2 = p2.GetComponent<CharacterHitBoxs>();
-            if (hitBoxsP2 != null) hitBoxsP2.playerSide = PlayerSide.P2;
+                if (hitBoxsP2 != null)
+                hitBoxsP2.SetupSide(PlayerSide.P2);
 
             p2.SendMessage("Configure", SendMessageOptions.DontRequireReceiver);
 
@@ -55,6 +57,7 @@ public class GameSpawner : MonoBehaviour
             
             CharacterStatus statusP2 = p2.GetComponent<CharacterStatus>();
             if (statusP2 != null && hudP2 != null) hudP2.Setup(statusP2);
+
 
             MatchData.p2CharacterName = characterPrefabs[p2ID].name;
         }

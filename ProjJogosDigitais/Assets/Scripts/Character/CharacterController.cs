@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour
     private CharacterCombat combat;
     private CharacterHitBoxs hitBoxs;
     private CharacterAnimator animator;
-
+    private CharacterStatus status;
     private bool isAttacking = false;
     private bool isDead = false;
 
@@ -26,7 +26,7 @@ public class CharacterController : MonoBehaviour
         combat = GetComponent<CharacterCombat>();
         hitBoxs = GetComponent<CharacterHitBoxs>();
         animator = GetComponent<CharacterAnimator>();
-
+        status = GetComponent<CharacterStatus>();
         Configure();
     }
 
@@ -78,7 +78,8 @@ public class CharacterController : MonoBehaviour
         isAttacking = true;
         hitBoxs.Attack();
         combat.Attack(attackIndex);
-        StartCoroutine(EndAttackAfterDelay(1.3f));
+        movement.Move(0);
+        StartCoroutine(EndAttackAfterDelay(0.3f));
     }
 
     IEnumerator EndAttackAfterDelay(float delay)
@@ -97,7 +98,12 @@ public class CharacterController : MonoBehaviour
     {
         if (isDead)
             return;
-
+        status.TakeDamage(damage);
+        if (status.CurrentHealth <= 0)
+        {
+            Die();
+            return;
+        }
         hitBoxs.Invulnerable();
         animator.PlayTakeHit();
         StartCoroutine(EndHitAfterDelay(0.5f));
