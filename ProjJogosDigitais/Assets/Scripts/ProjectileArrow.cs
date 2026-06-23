@@ -1,9 +1,11 @@
+using ProjJogosDigitais.Assets.Scripts.Interfaces;
 using UnityEngine;
 
 public class ProjectileArrow : MonoBehaviour
 {
     public float speed = 8f;
     public float lifeTime = 4f; 
+    public int damageAmount = 20;
 
     void Start()
     {
@@ -17,33 +19,23 @@ public class ProjectileArrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.CompareTag("Player"))
+        IDamage damageable = other.GetComponent<IDamage>();
+        if (damageable == null)
         {
-            Debug.Log($"HitBoxHurt triggered with: {other.name}");
+            damageable = other.GetComponentInParent<IDamage>();
+        }
 
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth == null)
-            {
-                playerHealth = other.GetComponentInParent<PlayerHealth>();
-            }
-
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(20); 
-                Destroy(gameObject); 
-                return; 
-            }
+        if (damageable != null)
+        {
+            Debug.Log($"Flecha acertou e causou dano em: {other.name}");
+            damageable.TakeDamage(damageAmount); 
+            Destroy(gameObject); 
+            return; 
         }
         
         if (other.gameObject.name.Contains("Platform") || other.CompareTag("Ground"))
         {
-            Collider2D playerPerto = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Default")); 
-            
-            if (other.gameObject.CompareTag("Player") == false)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }

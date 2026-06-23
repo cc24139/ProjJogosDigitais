@@ -9,7 +9,7 @@ public class CharacterStatus : MonoBehaviour, IDamage
     [SerializeField] private int maxMana = 100;
 
     [Header("Regeneração de Mana")]
-    [SerializeField] private int manaRegenAmount = 2;
+    [SerializeField] private int manaRegenAmount = 5;
     [SerializeField] private float manaRegenInterval = 1f;
 
     private int currentHealth;
@@ -69,6 +69,15 @@ public class CharacterStatus : MonoBehaviour, IDamage
     public void Die()
     {
         StopAllCoroutines();
-        Debug.Log("Personagem morreu!");
+
+        CharacterController controller = GetComponent<CharacterController>();
+        if (controller != null)
+        {
+            controller.Die();
+        }
+        else
+        {
+            Debug.LogWarning("CharacterController não encontrado no personagem ao morrer!");
+        }
     }
 }

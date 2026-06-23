@@ -1,10 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
-/*
-    Controlador central do personagem.
-    Único ponto que lê input e decide qual ação executar.
-*/
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterMovement))]
 [RequireComponent(typeof(CharacterCombat))]
@@ -37,7 +33,6 @@ public class CharacterController : MonoBehaviour
     private void Configure(){
         inputConfig = hitBoxs.playerSide == PlayerSide.P1 ? p1 : p2;
     }
-
 
     private void Update()
     {
@@ -100,15 +95,11 @@ public class CharacterController : MonoBehaviour
 
     public void OnHit(int damage)
     {
-        Debug.Log($"Took {damage} damage!");
-        Debug.Log($"is dead?: {isDead}");
-        Debug.Log($"Animator is null?: {animator == null}");
         if (isDead)
             return;
 
         hitBoxs.Invulnerable();
         animator.PlayTakeHit();
-        Debug.Log("Playing take hit animation!");
         StartCoroutine(EndHitAfterDelay(0.5f));
     }
 
@@ -117,6 +108,7 @@ public class CharacterController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         EndHit();
     }
+
     public void EndHit()
     {
         if (isDead)
@@ -126,9 +118,26 @@ public class CharacterController : MonoBehaviour
 
     public void Die()
     {
+        if (isDead)
+            return;
+
         isDead = true;
         hitBoxs.Invulnerable();
         animator.PlayDeath();
         movement.Move(0);
+
+        StartCoroutine(GameOverSequenceRoutine());
+    }
+
+    private IEnumerator GameOverSequenceRoutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Time.timeScale = 0f;
+
+        yield return new WaitForSecondsRealtime(1.0f);
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("GameEndScene");
     }
 }
