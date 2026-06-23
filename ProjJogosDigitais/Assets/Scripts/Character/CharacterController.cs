@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -64,14 +65,22 @@ public class CharacterController : MonoBehaviour
     {
         if (isAttacking)
             return;
-
-        if (Input.GetKeyDown(inputConfig.attack1))
-            StartAttack(0);
-        else if (Input.GetKeyDown(inputConfig.attack2))
-            StartAttack(1);
-        else if (Input.GetKeyDown(inputConfig.attack3))
-            StartAttack(2);
+        //Animação deve chamar o método StartAttack(int) no inicio e no final chamar endAttack()
+        if(Input.GetKeyDown(inputConfig.attack1) && combat.AttackCount > 0)
+        {
+            animator.PlayAttack(0);
+        }
+        else if (Input.GetKeyDown(inputConfig.attack2) && combat.AttackCount > 1)
+        {
+            animator.PlayAttack(1);
+        }
+        else if (Input.GetKeyDown(inputConfig.attack3) && combat.AttackCount > 2)
+        {
+            animator.PlayAttack(2);
+        }
     }
+
+
 
     public void StartAttack(int attackIndex)
     {
@@ -79,14 +88,10 @@ public class CharacterController : MonoBehaviour
         hitBoxs.Attack();
         combat.Attack(attackIndex);
         movement.Move(0);
-        StartCoroutine(EndAttackAfterDelay(0.3f));
+
     }
 
-    IEnumerator EndAttackAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        EndAttack();
-    }
+
 
     public void EndAttack()
     {
@@ -106,14 +111,9 @@ public class CharacterController : MonoBehaviour
         }
         hitBoxs.Invulnerable();
         animator.PlayTakeHit();
-        StartCoroutine(EndHitAfterDelay(0.5f));
     }
 
-    IEnumerator EndHitAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        EndHit();
-    }
+
 
     public void EndHit()
     {

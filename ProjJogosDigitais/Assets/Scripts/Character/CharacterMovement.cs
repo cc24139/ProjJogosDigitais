@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
         if (!isGrounded)
             return;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
+        isGrounded = false; 
         characterAnimator.SetGrounded(false);
     }
 

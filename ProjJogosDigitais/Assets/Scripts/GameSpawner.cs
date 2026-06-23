@@ -43,12 +43,12 @@ public class GameSpawner : MonoBehaviour
 
         if (p2Point != null && characterPrefabs[p2ID] != null)
         {
+
             GameObject p2 = Instantiate(characterPrefabs[p2ID], p2Point.transform.position, p2Point.transform.rotation);
             p2.name = "Player 2";
-            p2.transform.localScale = new Vector3(-p2.transform.localScale.x, p2.transform.localScale.y, p2.transform.localScale.z);
 
             CharacterHitBoxs hitBoxsP2 = p2.GetComponent<CharacterHitBoxs>();
-                if (hitBoxsP2 != null)
+            if (hitBoxsP2 != null)
                 hitBoxsP2.SetupSide(PlayerSide.P2);
 
             p2.SendMessage("Configure", SendMessageOptions.DontRequireReceiver);

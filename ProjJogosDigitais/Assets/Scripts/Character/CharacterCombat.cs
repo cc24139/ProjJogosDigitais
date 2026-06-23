@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterCombat : MonoBehaviour
 {
     [Header("Attacks")]
-    [SerializeField] private int attackCount = 2;
+    [SerializeField] private int attackCount ;
 
     private CharacterAnimator characterAnimator;
     private  CharacterHitBoxs characterHitBoxs;
@@ -23,6 +23,11 @@ public class CharacterCombat : MonoBehaviour
             return;
         }
         characterHitBoxs.Attack();
-        characterAnimator.PlayAttack(attackIndex);
+        //characterAnimator.PlayAttack(attackIndex); animação já chama essa função
+    }
+
+    public int AttackCount
+    {
+        get { return attackCount; }
     }
 }

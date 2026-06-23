@@ -15,6 +15,6 @@ MonoBehaviour:
   moveLeft: 276
   moveRight: 275
   jump: 273
-  attack1: 261
-  attack2: 262
-  attack3: 263
+  attack1: 260
+  attack2: 261
+  attack3: 262
