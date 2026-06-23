@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private PlayerInputManager p1;
-    [SerializeField] private PlayerInputManager p2;    
+    [SerializeField] private PlayerInputManager p2;
 
     private PlayerInputManager inputConfig;
     private CharacterMovement movement;
@@ -31,7 +31,8 @@ public class CharacterController : MonoBehaviour
         Configure();
     }
 
-    private void Configure(){
+    private void Configure()
+    {
         inputConfig = hitBoxs.playerSide == PlayerSide.P1 ? p1 : p2;
     }
 
@@ -65,63 +66,57 @@ public class CharacterController : MonoBehaviour
     {
         if (isAttacking)
             return;
-        //Animação deve chamar o método StartAttack(int) no inicio e no final chamar endAttack()
-        if(Input.GetKeyDown(inputConfig.attack1) && combat.AttackCount > 0)
-        {
+
+        if (Input.GetKeyDown(inputConfig.attack1) && combat.AttackCount > 0)
             animator.PlayAttack(0);
-        }
         else if (Input.GetKeyDown(inputConfig.attack2) && combat.AttackCount > 1)
-        {
             animator.PlayAttack(1);
-        }
         else if (Input.GetKeyDown(inputConfig.attack3) && combat.AttackCount > 2)
-        {
             animator.PlayAttack(2);
-        }
     }
-
-
 
     public void StartAttack(int attackIndex)
     {
+        if (!status.CanAffordMana(10))
+        {
+            EndAttack();
+            return;
+        }
         isAttacking = true;
         hitBoxs.Attack();
         combat.Attack(attackIndex);
         movement.Move(0);
-
+        status.UseMana(10);
     }
-
-
 
     public void EndAttack()
     {
-        Debug.Log("End Attack");
-        Debug.Log("Enter in EndAttack()!");
         isAttacking = false;
         hitBoxs.Normal();
-        
     }
 
     public void OnHit(int damage)
     {
         if (isDead)
             return;
+
         status.TakeDamage(damage);
+
         if (status.CurrentHealth <= 0)
         {
             Die();
             return;
         }
+
         hitBoxs.Invulnerable();
         animator.PlayTakeHit();
     }
-
-
 
     public void EndHit()
     {
         if (isDead)
             return;
+
         hitBoxs.Normal();
     }
 
@@ -131,6 +126,14 @@ public class CharacterController : MonoBehaviour
             return;
 
         isDead = true;
+
+        if (hitBoxs != null)
+        {
+            MatchData.winnerName = hitBoxs.playerSide == PlayerSide.P1
+                ? MatchData.p2CharacterName
+                : MatchData.p1CharacterName;
+        }
+
         hitBoxs.Invulnerable();
         animator.PlayDeath();
         movement.Move(0);
