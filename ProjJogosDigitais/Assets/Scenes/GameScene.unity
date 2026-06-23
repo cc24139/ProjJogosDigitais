@@ -150,8 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
   mapLayouts:
   - {fileID: 8615100610390685149, guid: bd46de951eac91a4b9a5cff2cc3baa30, type: 3}
-  - {fileID: 8615100610390685149, guid: bd46de951eac91a4b9a5cff2cc3baa30, type: 3}
-  - {fileID: 8615100610390685149, guid: bd46de951eac91a4b9a5cff2cc3baa30, type: 3}
+  - {fileID: 7288625985916417376, guid: 5f2d3bc229d5c15449d477832cc1805e, type: 3}
 --- !u!4 &275697012
 Transform:
   m_ObjectHideFlags: 0
