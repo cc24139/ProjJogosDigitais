@@ -95,8 +95,11 @@ public class CharacterController : MonoBehaviour
 
     public void EndAttack()
     {
+        Debug.Log("End Attack");
+        Debug.Log("Enter in EndAttack()!");
         isAttacking = false;
         hitBoxs.Normal();
+        
     }
 
     public void OnHit(int damage)
