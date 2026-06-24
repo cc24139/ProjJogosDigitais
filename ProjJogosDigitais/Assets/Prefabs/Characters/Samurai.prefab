@@ -187,7 +187,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.01657095, y: 0.024529219}
-  m_Size: {x: 0.49914074, y: 0.67541695}
+  m_Size: {x: 0.49914074, y: 0.4954169}
   m_Direction: 0
 --- !u!114 &6880009366091459938
 MonoBehaviour:
@@ -271,6 +271,8 @@ MonoBehaviour:
   maxMana: 100
   manaRegenAmount: 5
   manaRegenInterval: 1
+  healthRegenAmount: 2
+  healthRegenInterval: 3
 --- !u!1001 &306203057911294457
 PrefabInstance:
   m_ObjectHideFlags: 0
